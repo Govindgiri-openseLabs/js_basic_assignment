@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body id="body"style="background-color:pink">
+    <button id="change_color" onclick="change_color_btn()">change background color</button>
+    <button id="appendList"onclick="append_child()">Add List Item</button>
+    <input id="item_name"placeholder="enter item name" value=""><br><br>
+    
+    
+    
+    <div class="list_item_roll">
+         <span>List Items</span>
+         <button id="remove_child"value="L"onclick="remove_child(value)">Remove_Last_child</button>
+         <button id="remove_child"value="F"onclick="remove_child(value)">Remove_First_child</button>
+     </div>   
+     <ul id="mylist">
+      <!-- add new list items -->
+     </ul>   
+  
+
+
+   
+   <script>
+let num=0;
+function change_color_btn()
+  { if(num%2===0)
+    document.getElementById('body').style="background-color:rgba(20, 188, 249, 0.267)"
+    else
+    document.getElementById('body').style="background-color:rgba(153, 20, 249, 0.267)"
+    num++;
+  }
+
+  
+  function append_child()
+   {
+      let item_name=document.getElementById('item_name').value;
+      if(item_name!="")
+       {  
+           const newItem=document.createElement('li');
+           newItem.classList="mylist_new_row";
+           newItem.innerHTML=item_name;
+           newItem.value=item_name;
+           const parent=document.getElementById("mylist");
+           parent.appendChild(newItem); 
+       }  
+      document.getElementById('item_name').value="";  
+   }
+
+
+   function remove_child(value)
+    {   
+        const parent=document.getElementById("mylist");
+        if(value==='F')
+         {
+           if(parent.firstElementChild)  parent.removeChild(parent.firstElementChild);
+         }
+       else
+           {
+             if(parent.lastElementChild)  parent.removeChild(parent.lastElementChild);
+           }
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="get_url()">current url</button>
+    <button onclick="open_new_window()">Open New Window</button>
+
+
+
+
+    <script>
+        function get_url()
+         {
+             const url=window.location.href;
+             alert(url);
+         }
+       function open_new_window()
+         {
+        
+            const newWindowWithFeatures = window.open('https://www.google.com/', '_blank', 'width=500,height=400');
+
+         }  
+    </script>
+</body>
+</html>
